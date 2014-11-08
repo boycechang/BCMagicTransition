@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.source_files = 'MagicTransition/BCMagicMoveTransition'
   s.ios.deployment_target = '7.0' 
   s.frameworks = 'UIKit'
+  s.requires_arc = true
 end 
