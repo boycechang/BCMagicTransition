@@ -1,6 +1,9 @@
 BCMagicMoveTransition
 =====================
 
+![BCMagicMoveTransition](http://pan.baidu.com/s/1kTl4LWb)
+
+
 ## A MagicMove Style Custom UIViewController Transiton
 
 ### Version 1.0.0
