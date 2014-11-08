@@ -83,7 +83,7 @@
     
     [containerView addSubview:toViewController.view];
     
-    for (int i = [fromViewSnapshotArray count]; i > 0; i--) {
+    for (NSUInteger i = [fromViewSnapshotArray count]; i > 0; i--) {
         [containerView addSubview:[fromViewSnapshotArray objectAtIndex:i-1]];
     }
 
@@ -92,7 +92,7 @@
         
         toViewController.view.alpha = 1.0;
         
-        for (int i = 0; i < [self.fromViews count]; i++) {
+        for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
             UIView *toView = [self.toViews objectAtIndex:i];
             UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
             CGRect frame = [containerView convertRect:toView.frame fromView:toView.superview];
@@ -102,7 +102,7 @@
         
     } completion:^(BOOL finished) {
         
-        for (int i = 0; i < [self.fromViews count]; i++) {
+        for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
             UIView *toView = [self.toViews objectAtIndex:i];
             UIView *fromView = [self.fromViews objectAtIndex:i];
             UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
@@ -114,22 +114,6 @@
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         
     }];
-    
-    
-    /*
-    [UIView animateWithDuration:duration animations:^{
-        toViewController.view.alpha = 1.0;
-        CGRect frame = [containerView convertRect:self.toView.frame fromView:self.toView.superview];
-        fromViewSnapshot.frame = frame;
-    } completion:^(BOOL finished) {
-        
-        self.toView.hidden = NO;
-        self.fromView.hidden = NO;
-        [fromViewSnapshot removeFromSuperview];
-        
-        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-    }];
-     */
 }
 
 @end
