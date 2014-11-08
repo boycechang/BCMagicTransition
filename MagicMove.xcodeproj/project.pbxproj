@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E17EDCE31A03C5890097DD5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDCE21A03C5890097DD5C /* main.m */; };
+		E17EDCE61A03C5890097DD5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDCE51A03C5890097DD5C /* AppDelegate.m */; };
+		E17EDCF11A03C5890097DD5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17EDCF01A03C5890097DD5C /* Images.xcassets */; };
+		E17EDCF41A03C5890097DD5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17EDCF21A03C5890097DD5C /* LaunchScreen.xib */; };
+		E17EDD0E1A03C5B90097DD5C /* BCMagicTransit.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDD0B1A03C5B90097DD5C /* BCMagicTransit.m */; };
+		E17EDD0F1A03C5B90097DD5C /* BCMagicTransitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDD0D1A03C5B90097DD5C /* BCMagicTransitViewController.m */; };
+		E17EDD131A03C6110097DD5C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDD111A03C6110097DD5C /* FirstViewController.m */; };
+		E17EDD141A03C6110097DD5C /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17EDD121A03C6110097DD5C /* FirstViewController.xib */; };
+		E17EDD181A03C6220097DD5C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDD161A03C6220097DD5C /* SecondViewController.m */; };
+		E17EDD191A03C6220097DD5C /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17EDD171A03C6220097DD5C /* SecondViewController.xib */; };
+		E17EDD1B1A03C6C80097DD5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17EDD1A1A03C6C80097DD5C /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E17EDCFA1A03C5890097DD5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E17EDCD51A03C5890097DD5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E17EDCDC1A03C5890097DD5C;
+			remoteInfo = MagicTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E17EDCDD1A03C5890097DD5C /* MagicMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17EDCE11A03C5890097DD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17EDCE21A03C5890097DD5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E17EDCE41A03C5890097DD5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E17EDCE51A03C5890097DD5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E17EDCF01A03C5890097DD5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E17EDCF31A03C5890097DD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E17EDCF91A03C5890097DD5C /* MagicMoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicMoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17EDD0A1A03C5B90097DD5C /* BCMagicTransit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMagicTransit.h; sourceTree = "<group>"; };
+		E17EDD0B1A03C5B90097DD5C /* BCMagicTransit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMagicTransit.m; sourceTree = "<group>"; };
+		E17EDD0C1A03C5B90097DD5C /* BCMagicTransitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMagicTransitViewController.h; sourceTree = "<group>"; };
+		E17EDD0D1A03C5B90097DD5C /* BCMagicTransitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMagicTransitViewController.m; sourceTree = "<group>"; };
+		E17EDD101A03C6110097DD5C /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		E17EDD111A03C6110097DD5C /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		E17EDD121A03C6110097DD5C /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		E17EDD151A03C6220097DD5C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		E17EDD161A03C6220097DD5C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		E17EDD171A03C6220097DD5C /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		E17EDD1A1A03C6C80097DD5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E17EDCDA1A03C5890097DD5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17EDD1B1A03C6C80097DD5C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17EDCF61A03C5890097DD5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E17EDCD41A03C5890097DD5C = {
+			isa = PBXGroup;
+			children = (
+				E17EDD1A1A03C6C80097DD5C /* UIKit.framework */,
+				E17EDCDF1A03C5890097DD5C /* MagicTransition */,
+				E17EDCDE1A03C5890097DD5C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E17EDCDE1A03C5890097DD5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E17EDCDD1A03C5890097DD5C /* MagicMove.app */,
+				E17EDCF91A03C5890097DD5C /* MagicMoveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E17EDCDF1A03C5890097DD5C /* MagicTransition */ = {
+			isa = PBXGroup;
+			children = (
+				E17EDD091A03C5A30097DD5C /* MagicTransiton */,
+				E17EDCE41A03C5890097DD5C /* AppDelegate.h */,
+				E17EDCE51A03C5890097DD5C /* AppDelegate.m */,
+				E17EDD101A03C6110097DD5C /* FirstViewController.h */,
+				E17EDD111A03C6110097DD5C /* FirstViewController.m */,
+				E17EDD121A03C6110097DD5C /* FirstViewController.xib */,
+				E17EDD151A03C6220097DD5C /* SecondViewController.h */,
+				E17EDD161A03C6220097DD5C /* SecondViewController.m */,
+				E17EDD171A03C6220097DD5C /* SecondViewController.xib */,
+				E17EDCF01A03C5890097DD5C /* Images.xcassets */,
+				E17EDCF21A03C5890097DD5C /* LaunchScreen.xib */,
+				E17EDCE01A03C5890097DD5C /* Supporting Files */,
+			);
+			path = MagicTransition;
+			sourceTree = "<group>";
+		};
+		E17EDCE01A03C5890097DD5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E17EDCE11A03C5890097DD5C /* Info.plist */,
+				E17EDCE21A03C5890097DD5C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E17EDD091A03C5A30097DD5C /* MagicTransiton */ = {
+			isa = PBXGroup;
+			children = (
+				E17EDD0A1A03C5B90097DD5C /* BCMagicTransit.h */,
+				E17EDD0B1A03C5B90097DD5C /* BCMagicTransit.m */,
+				E17EDD0C1A03C5B90097DD5C /* BCMagicTransitViewController.h */,
+				E17EDD0D1A03C5B90097DD5C /* BCMagicTransitViewController.m */,
+			);
+			name = MagicTransiton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E17EDCDC1A03C5890097DD5C /* MagicMove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E17EDD031A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMove" */;
+			buildPhases = (
+				E17EDCD91A03C5890097DD5C /* Sources */,
+				E17EDCDA1A03C5890097DD5C /* Frameworks */,
+				E17EDCDB1A03C5890097DD5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicMove;
+			productName = MagicTransition;
+			productReference = E17EDCDD1A03C5890097DD5C /* MagicMove.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E17EDCF81A03C5890097DD5C /* MagicMoveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E17EDD061A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMoveTests" */;
+			buildPhases = (
+				E17EDCF51A03C5890097DD5C /* Sources */,
+				E17EDCF61A03C5890097DD5C /* Frameworks */,
+				E17EDCF71A03C5890097DD5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E17EDCFB1A03C5890097DD5C /* PBXTargetDependency */,
+			);
+			name = MagicMoveTests;
+			productName = MagicTransitionTests;
+			productReference = E17EDCF91A03C5890097DD5C /* MagicMoveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E17EDCD51A03C5890097DD5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Boyce;
+				TargetAttributes = {
+					E17EDCDC1A03C5890097DD5C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					E17EDCF81A03C5890097DD5C = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = E17EDCDC1A03C5890097DD5C;
+					};
+				};
+			};
+			buildConfigurationList = E17EDCD81A03C5890097DD5C /* Build configuration list for PBXProject "MagicMove" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E17EDCD41A03C5890097DD5C;
+			productRefGroup = E17EDCDE1A03C5890097DD5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E17EDCDC1A03C5890097DD5C /* MagicMove */,
+				E17EDCF81A03C5890097DD5C /* MagicMoveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E17EDCDB1A03C5890097DD5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17EDD191A03C6220097DD5C /* SecondViewController.xib in Resources */,
+				E17EDCF41A03C5890097DD5C /* LaunchScreen.xib in Resources */,
+				E17EDD141A03C6110097DD5C /* FirstViewController.xib in Resources */,
+				E17EDCF11A03C5890097DD5C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17EDCF71A03C5890097DD5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E17EDCD91A03C5890097DD5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17EDD0E1A03C5B90097DD5C /* BCMagicTransit.m in Sources */,
+				E17EDD131A03C6110097DD5C /* FirstViewController.m in Sources */,
+				E17EDD181A03C6220097DD5C /* SecondViewController.m in Sources */,
+				E17EDCE61A03C5890097DD5C /* AppDelegate.m in Sources */,
+				E17EDD0F1A03C5B90097DD5C /* BCMagicTransitViewController.m in Sources */,
+				E17EDCE31A03C5890097DD5C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17EDCF51A03C5890097DD5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E17EDCFB1A03C5890097DD5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E17EDCDC1A03C5890097DD5C /* MagicMove */;
+			targetProxy = E17EDCFA1A03C5890097DD5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E17EDCF21A03C5890097DD5C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E17EDCF31A03C5890097DD5C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E17EDD011A03C5890097DD5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E17EDD021A03C5890097DD5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E17EDD041A03C5890097DD5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagicTransition/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = MagicMove;
+			};
+			name = Debug;
+		};
+		E17EDD051A03C5890097DD5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagicTransition/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = MagicMove;
+			};
+			name = Release;
+		};
+		E17EDD071A03C5890097DD5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicTransitionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = MagicMoveTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicTransition.app/MagicTransition";
+			};
+			name = Debug;
+		};
+		E17EDD081A03C5890097DD5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicTransitionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = MagicMoveTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicTransition.app/MagicTransition";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E17EDCD81A03C5890097DD5C /* Build configuration list for PBXProject "MagicMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17EDD011A03C5890097DD5C /* Debug */,
+				E17EDD021A03C5890097DD5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E17EDD031A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17EDD041A03C5890097DD5C /* Debug */,
+				E17EDD051A03C5890097DD5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E17EDD061A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMoveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17EDD071A03C5890097DD5C /* Debug */,
+				E17EDD081A03C5890097DD5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E17EDCD51A03C5890097DD5C /* Project object */;
+}
