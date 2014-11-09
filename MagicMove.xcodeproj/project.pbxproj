@@ -20,16 +20,6 @@
 		E17EDD1B1A03C6C80097DD5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17EDD1A1A03C6C80097DD5C /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E17EDCFA1A03C5890097DD5C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E17EDCD51A03C5890097DD5C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E17EDCDC1A03C5890097DD5C;
-			remoteInfo = MagicTransition;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		E11BF6191A0E22A1007FF270 /* BCMagicTransit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMagicTransit.h; sourceTree = "<group>"; };
 		E11BF61A1A0E22A1007FF270 /* BCMagicTransit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMagicTransit.m; sourceTree = "<group>"; };
@@ -42,7 +32,6 @@
 		E17EDCE51A03C5890097DD5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E17EDCF01A03C5890097DD5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E17EDCF31A03C5890097DD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E17EDCF91A03C5890097DD5C /* MagicMoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicMoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17EDD101A03C6110097DD5C /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		E17EDD111A03C6110097DD5C /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		E17EDD121A03C6110097DD5C /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
@@ -58,13 +47,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17EDD1B1A03C6C80097DD5C /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E17EDCF61A03C5890097DD5C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				E17EDCDD1A03C5890097DD5C /* MagicMove.app */,
-				E17EDCF91A03C5890097DD5C /* MagicMoveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,24 +129,6 @@
 			productReference = E17EDCDD1A03C5890097DD5C /* MagicMove.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E17EDCF81A03C5890097DD5C /* MagicMoveTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E17EDD061A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMoveTests" */;
-			buildPhases = (
-				E17EDCF51A03C5890097DD5C /* Sources */,
-				E17EDCF61A03C5890097DD5C /* Frameworks */,
-				E17EDCF71A03C5890097DD5C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E17EDCFB1A03C5890097DD5C /* PBXTargetDependency */,
-			);
-			name = MagicMoveTests;
-			productName = MagicTransitionTests;
-			productReference = E17EDCF91A03C5890097DD5C /* MagicMoveTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +140,6 @@
 				TargetAttributes = {
 					E17EDCDC1A03C5890097DD5C = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					E17EDCF81A03C5890097DD5C = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = E17EDCDC1A03C5890097DD5C;
 					};
 				};
 			};
@@ -198,7 +157,6 @@
 			projectRoot = "";
 			targets = (
 				E17EDCDC1A03C5890097DD5C /* MagicMove */,
-				E17EDCF81A03C5890097DD5C /* MagicMoveTests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,13 +170,6 @@
 				E17EDCF41A03C5890097DD5C /* LaunchScreen.xib in Resources */,
 				E17EDD141A03C6110097DD5C /* FirstViewController.xib in Resources */,
 				E17EDCF11A03C5890097DD5C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E17EDCF71A03C5890097DD5C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,22 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17EDCF51A03C5890097DD5C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E17EDCFB1A03C5890097DD5C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E17EDCDC1A03C5890097DD5C /* MagicMove */;
-			targetProxy = E17EDCFA1A03C5890097DD5C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E17EDCF21A03C5890097DD5C /* LaunchScreen.xib */ = {
@@ -363,40 +299,6 @@
 			};
 			name = Release;
 		};
-		E17EDD071A03C5890097DD5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MagicTransitionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = MagicMoveTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicTransition.app/MagicTransition";
-			};
-			name = Debug;
-		};
-		E17EDD081A03C5890097DD5C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MagicTransitionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = MagicMoveTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicTransition.app/MagicTransition";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -414,15 +316,6 @@
 			buildConfigurations = (
 				E17EDD041A03C5890097DD5C /* Debug */,
 				E17EDD051A03C5890097DD5C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E17EDD061A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMoveTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E17EDD071A03C5890097DD5C /* Debug */,
-				E17EDD081A03C5890097DD5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
