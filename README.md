@@ -1,7 +1,7 @@
 BCMagicTransition
 =====================
 
-![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/Magic.gif)
+![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/MagicTransition.gif)
 
 
 ## A MagicMove Style Custom UIViewController Transiton
