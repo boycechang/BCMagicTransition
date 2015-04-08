@@ -1,20 +1,20 @@
 //
-//  BCMagicTransitViewController.m
-//  BCMagicTransit
+//  BCMagicTransitionViewController.m
+//  BCMagicTransitionViewController
 //
 //  Created by Xaiobo Zhang on 10/22/14.
 //  Copyright (c) 2014 Xaiobo Zhang. All rights reserved.
 //
 
-#import "BCMagicTransitViewController.h"
+#import "BCMagicTransitionViewController.h"
 
 #define DEFAULT_TRANSITON_DURATION 0.3
 
-@interface BCMagicTransitViewController ()
+@interface BCMagicTransitionViewController ()
 
 @end
 
-@implementation BCMagicTransitViewController
+@implementation BCMagicTransitionViewController
 
 #pragma mark UIViewController methods
 
@@ -41,16 +41,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)pushViewController:(BCMagicTransitViewController *)viewController fromView:(UIView *)fromView toView:(UIView *)toView duration:(NSTimeInterval)duration{
+- (void)pushViewController:(BCMagicTransitionViewController *)viewController fromView:(UIView *)fromView toView:(UIView *)toView duration:(NSTimeInterval)duration{
     NSArray *fromViews = [NSArray arrayWithObject:fromView];
     NSArray *toViews = [NSArray arrayWithObject:toView];
-    [self pushViewController:(BCMagicTransitViewController *)viewController fromViews:fromViews toViews:toViews duration:duration];
+    [self pushViewController:(BCMagicTransitionViewController *)viewController fromViews:fromViews toViews:toViews duration:duration];
 }
 
-- (void)pushViewController:(BCMagicTransitViewController *)viewController fromViews:(NSArray *)fromViews toViews:(NSArray *)toViews duration:(NSTimeInterval)duration
-{
-    // 生成此次Push的Transition，因为一个controller可能多次push，每次使用完需要在回调中清除
-    BCMagicTransit *magicPush = [BCMagicTransit new];
+- (void)pushViewController:(BCMagicTransitionViewController *)viewController fromViews:(NSArray *)fromViews toViews:(NSArray *)toViews duration:(NSTimeInterval)duration {
+    BCMagicTransition *magicPush = [BCMagicTransition new];
     magicPush.isMagic = YES;
     magicPush.isPush = YES;
     magicPush.duration = duration;
@@ -59,14 +57,14 @@
     self.pushTransit = magicPush;
     self.navigationController.delegate = self;
     
-    // 为下一层添加返回手势和动画
-    BCMagicTransitViewController *transitVC = (BCMagicTransitViewController *)viewController;
+    // Add pop gesture and animation to viewcontroller
+    BCMagicTransitionViewController *transitVC = (BCMagicTransitionViewController *)viewController;
     
     UIScreenEdgePanGestureRecognizer *popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleEdgePanGestureRecognizer:)];
     popRecognizer.edges = UIRectEdgeLeft;
     [transitVC.view addGestureRecognizer:popRecognizer];
     
-    BCMagicTransit *magicPop = [BCMagicTransit new];
+    BCMagicTransition *magicPop = [BCMagicTransition new];
     magicPop.isMagic = YES;
     magicPop.isPush = NO;
     magicPop.duration = duration;
@@ -80,8 +78,8 @@
 
 #pragma mark UINavigationControllerDelegate methods
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if ([viewController isKindOfClass:[BCMagicTransitViewController class]])
-        [(BCMagicTransitViewController *)viewController setPushTransit:nil];
+    if ([viewController isKindOfClass:[BCMagicTransitionViewController class]])
+        [(BCMagicTransitionViewController *)viewController setPushTransit:nil];
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
@@ -91,10 +89,10 @@
     switch (operation) {
         case UINavigationControllerOperationPush:
         {
-            if ([fromVC isKindOfClass:[BCMagicTransitViewController class]] && [(BCMagicTransitViewController *)fromVC pushTransit]) {
-                return [(BCMagicTransitViewController *)fromVC pushTransit];
+            if ([fromVC isKindOfClass:[BCMagicTransitionViewController class]] && [(BCMagicTransitionViewController *)fromVC pushTransit]) {
+                return [(BCMagicTransitionViewController *)fromVC pushTransit];
             } else {
-                BCMagicTransit *normalPush = [BCMagicTransit new];
+                BCMagicTransition *normalPush = [BCMagicTransition new];
                 normalPush.isMagic = NO;
                 normalPush.isPush = YES;
                 normalPush.duration = DEFAULT_TRANSITON_DURATION;
@@ -104,10 +102,10 @@
             break;
         case UINavigationControllerOperationPop:
         {
-            if ([fromVC isKindOfClass:[BCMagicTransitViewController class]] && [(BCMagicTransitViewController *)fromVC popTransit]) {
-                return [(BCMagicTransitViewController *)fromVC popTransit];
+            if ([fromVC isKindOfClass:[BCMagicTransitionViewController class]] && [(BCMagicTransitionViewController *)fromVC popTransit]) {
+                return [(BCMagicTransitionViewController *)fromVC popTransit];
             } else {
-                BCMagicTransit *normalPop = [BCMagicTransit new];
+                BCMagicTransition *normalPop = [BCMagicTransition new];
                 normalPop.isMagic = NO;
                 normalPop.isPush = NO;
                 normalPop.duration = DEFAULT_TRANSITON_DURATION;
@@ -121,17 +119,15 @@
     }
 }
 
-
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                          interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
-    if ([navigationController.topViewController isKindOfClass:[BCMagicTransitViewController class]]) {
-        BCMagicTransitViewController *viewController = (BCMagicTransitViewController *)navigationController.topViewController;
+    if ([navigationController.topViewController isKindOfClass:[BCMagicTransitionViewController class]]) {
+        BCMagicTransitionViewController *viewController = (BCMagicTransitionViewController *)navigationController.topViewController;
         return viewController.interactivePopTransition;
     } else {
         return nil;
     }
 }
-
 
 - (void)handleEdgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer*)recognizer {
     CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width * 1.0);

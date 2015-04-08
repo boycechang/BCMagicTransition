@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BCMagicTransitViewController.h"
+#import "BCMagicTransitionViewController.h"
 
-@interface FirstViewController : BCMagicTransitViewController
+@interface FirstViewController : BCMagicTransitionViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *label1;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView1;

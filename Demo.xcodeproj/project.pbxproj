@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E11BF61D1A0E22A1007FF270 /* BCMagicTransit.m in Sources */ = {isa = PBXBuildFile; fileRef = E11BF61A1A0E22A1007FF270 /* BCMagicTransit.m */; };
-		E11BF61E1A0E22A1007FF270 /* BCMagicTransitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11BF61C1A0E22A1007FF270 /* BCMagicTransitViewController.m */; };
+		E138B7E91AD50C4000843CCA /* BCMagicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E138B7E61AD50C4000843CCA /* BCMagicTransition.m */; };
+		E138B7EA1AD50C4000843CCA /* BCMagicTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138B7E81AD50C4000843CCA /* BCMagicTransitionViewController.m */; };
+		E138B7EE1AD5140300843CCA /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138B7EC1AD5140300843CCA /* ThirdViewController.m */; };
+		E138B7EF1AD5140300843CCA /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138B7ED1AD5140300843CCA /* ThirdViewController.xib */; };
 		E17EDCE31A03C5890097DD5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDCE21A03C5890097DD5C /* main.m */; };
 		E17EDCE61A03C5890097DD5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDCE51A03C5890097DD5C /* AppDelegate.m */; };
 		E17EDCF11A03C5890097DD5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17EDCF01A03C5890097DD5C /* Images.xcassets */; };
@@ -21,11 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E11BF6191A0E22A1007FF270 /* BCMagicTransit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMagicTransit.h; sourceTree = "<group>"; };
-		E11BF61A1A0E22A1007FF270 /* BCMagicTransit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMagicTransit.m; sourceTree = "<group>"; };
-		E11BF61B1A0E22A1007FF270 /* BCMagicTransitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMagicTransitViewController.h; sourceTree = "<group>"; };
-		E11BF61C1A0E22A1007FF270 /* BCMagicTransitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMagicTransitViewController.m; sourceTree = "<group>"; };
-		E17EDCDD1A03C5890097DD5C /* MagicMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E138B7E51AD50C4000843CCA /* BCMagicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCMagicTransition.h; path = BCMagicTransition/BCMagicTransition.h; sourceTree = "<group>"; };
+		E138B7E61AD50C4000843CCA /* BCMagicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCMagicTransition.m; path = BCMagicTransition/BCMagicTransition.m; sourceTree = "<group>"; };
+		E138B7E71AD50C4000843CCA /* BCMagicTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCMagicTransitionViewController.h; path = BCMagicTransition/BCMagicTransitionViewController.h; sourceTree = "<group>"; };
+		E138B7E81AD50C4000843CCA /* BCMagicTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCMagicTransitionViewController.m; path = BCMagicTransition/BCMagicTransitionViewController.m; sourceTree = "<group>"; };
+		E138B7EB1AD5140300843CCA /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		E138B7EC1AD5140300843CCA /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		E138B7ED1AD5140300843CCA /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		E17EDCDD1A03C5890097DD5C /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17EDCE11A03C5890097DD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17EDCE21A03C5890097DD5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E17EDCE41A03C5890097DD5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,22 +58,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E11BF6181A0E22A1007FF270 /* BCMagicMoveTransition */ = {
+		E138B7E41AD50BE600843CCA /* BSMagicTransition */ = {
 			isa = PBXGroup;
 			children = (
-				E11BF6191A0E22A1007FF270 /* BCMagicTransit.h */,
-				E11BF61A1A0E22A1007FF270 /* BCMagicTransit.m */,
-				E11BF61B1A0E22A1007FF270 /* BCMagicTransitViewController.h */,
-				E11BF61C1A0E22A1007FF270 /* BCMagicTransitViewController.m */,
+				E138B7E51AD50C4000843CCA /* BCMagicTransition.h */,
+				E138B7E61AD50C4000843CCA /* BCMagicTransition.m */,
+				E138B7E71AD50C4000843CCA /* BCMagicTransitionViewController.h */,
+				E138B7E81AD50C4000843CCA /* BCMagicTransitionViewController.m */,
 			);
-			path = BCMagicMoveTransition;
+			name = BSMagicTransition;
+			sourceTree = "<group>";
+		};
+		E138B7F01AD5140800843CCA /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E17EDD101A03C6110097DD5C /* FirstViewController.h */,
+				E17EDD111A03C6110097DD5C /* FirstViewController.m */,
+				E17EDD121A03C6110097DD5C /* FirstViewController.xib */,
+			);
+			name = FirstViewController;
+			sourceTree = "<group>";
+		};
+		E138B7F11AD5141300843CCA /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E17EDD151A03C6220097DD5C /* SecondViewController.h */,
+				E17EDD161A03C6220097DD5C /* SecondViewController.m */,
+				E17EDD171A03C6220097DD5C /* SecondViewController.xib */,
+			);
+			name = SecondViewController;
+			sourceTree = "<group>";
+		};
+		E138B7F21AD5141B00843CCA /* ThirdViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E138B7EB1AD5140300843CCA /* ThirdViewController.h */,
+				E138B7EC1AD5140300843CCA /* ThirdViewController.m */,
+				E138B7ED1AD5140300843CCA /* ThirdViewController.xib */,
+			);
+			name = ThirdViewController;
 			sourceTree = "<group>";
 		};
 		E17EDCD41A03C5890097DD5C = {
 			isa = PBXGroup;
 			children = (
-				E17EDD1A1A03C6C80097DD5C /* UIKit.framework */,
-				E17EDCDF1A03C5890097DD5C /* MagicTransition */,
+				E138B7E41AD50BE600843CCA /* BSMagicTransition */,
+				E17EDCDF1A03C5890097DD5C /* Demo */,
 				E17EDCDE1A03C5890097DD5C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,33 +111,31 @@
 		E17EDCDE1A03C5890097DD5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E17EDCDD1A03C5890097DD5C /* MagicMove.app */,
+				E17EDCDD1A03C5890097DD5C /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E17EDCDF1A03C5890097DD5C /* MagicTransition */ = {
+		E17EDCDF1A03C5890097DD5C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				E11BF6181A0E22A1007FF270 /* BCMagicMoveTransition */,
 				E17EDCE41A03C5890097DD5C /* AppDelegate.h */,
 				E17EDCE51A03C5890097DD5C /* AppDelegate.m */,
-				E17EDD101A03C6110097DD5C /* FirstViewController.h */,
-				E17EDD111A03C6110097DD5C /* FirstViewController.m */,
-				E17EDD121A03C6110097DD5C /* FirstViewController.xib */,
-				E17EDD151A03C6220097DD5C /* SecondViewController.h */,
-				E17EDD161A03C6220097DD5C /* SecondViewController.m */,
-				E17EDD171A03C6220097DD5C /* SecondViewController.xib */,
+				E138B7F01AD5140800843CCA /* FirstViewController */,
+				E138B7F11AD5141300843CCA /* SecondViewController */,
+				E138B7F21AD5141B00843CCA /* ThirdViewController */,
 				E17EDCF01A03C5890097DD5C /* Images.xcassets */,
 				E17EDCF21A03C5890097DD5C /* LaunchScreen.xib */,
 				E17EDCE01A03C5890097DD5C /* Supporting Files */,
 			);
+			name = Demo;
 			path = MagicTransition;
 			sourceTree = "<group>";
 		};
 		E17EDCE01A03C5890097DD5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E17EDD1A1A03C6C80097DD5C /* UIKit.framework */,
 				E17EDCE11A03C5890097DD5C /* Info.plist */,
 				E17EDCE21A03C5890097DD5C /* main.m */,
 			);
@@ -112,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E17EDCDC1A03C5890097DD5C /* MagicMove */ = {
+		E17EDCDC1A03C5890097DD5C /* Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E17EDD031A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMove" */;
+			buildConfigurationList = E17EDD031A03C5890097DD5C /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
 				E17EDCD91A03C5890097DD5C /* Sources */,
 				E17EDCDA1A03C5890097DD5C /* Frameworks */,
@@ -124,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = MagicMove;
+			name = Demo;
 			productName = MagicTransition;
-			productReference = E17EDCDD1A03C5890097DD5C /* MagicMove.app */;
+			productReference = E17EDCDD1A03C5890097DD5C /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +176,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E17EDCD81A03C5890097DD5C /* Build configuration list for PBXProject "MagicMove" */;
+			buildConfigurationList = E17EDCD81A03C5890097DD5C /* Build configuration list for PBXProject "Demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -156,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E17EDCDC1A03C5890097DD5C /* MagicMove */,
+				E17EDCDC1A03C5890097DD5C /* Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +202,7 @@
 				E17EDD191A03C6220097DD5C /* SecondViewController.xib in Resources */,
 				E17EDCF41A03C5890097DD5C /* LaunchScreen.xib in Resources */,
 				E17EDD141A03C6110097DD5C /* FirstViewController.xib in Resources */,
+				E138B7EF1AD5140300843CCA /* ThirdViewController.xib in Resources */,
 				E17EDCF11A03C5890097DD5C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,11 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17EDD131A03C6110097DD5C /* FirstViewController.m in Sources */,
-				E11BF61E1A0E22A1007FF270 /* BCMagicTransitViewController.m in Sources */,
 				E17EDD181A03C6220097DD5C /* SecondViewController.m in Sources */,
-				E11BF61D1A0E22A1007FF270 /* BCMagicTransit.m in Sources */,
+				E138B7EA1AD50C4000843CCA /* BCMagicTransitionViewController.m in Sources */,
 				E17EDCE61A03C5890097DD5C /* AppDelegate.m in Sources */,
 				E17EDCE31A03C5890097DD5C /* main.m in Sources */,
+				E138B7E91AD50C4000843CCA /* BCMagicTransition.m in Sources */,
+				E138B7EE1AD5140300843CCA /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +320,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MagicTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = MagicMove;
+				PRODUCT_NAME = Demo;
 			};
 			name = Debug;
 		};
@@ -295,14 +330,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MagicTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = MagicMove;
+				PRODUCT_NAME = Demo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E17EDCD81A03C5890097DD5C /* Build configuration list for PBXProject "MagicMove" */ = {
+		E17EDCD81A03C5890097DD5C /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E17EDD011A03C5890097DD5C /* Debug */,
@@ -311,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E17EDD031A03C5890097DD5C /* Build configuration list for PBXNativeTarget "MagicMove" */ = {
+		E17EDD031A03C5890097DD5C /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E17EDD041A03C5890097DD5C /* Debug */,

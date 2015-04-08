@@ -1,6 +1,6 @@
 //
-//  BCMagicTransit.h
-//  BCMagicTransit
+//  BCMagicTransition.h
+//  BCMagicTransition
 //
 //  Created by Xaiobo Zhang on 10/21/14.
 //  Copyright (c) 2014 Xaiobo Zhang. All rights reserved.
@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface BCMagicTransit : NSObject <UIViewControllerAnimatedTransitioning>
+@interface BCMagicTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, assign) BOOL isPush;
 @property (nonatomic, assign) BOOL isMagic;

@@ -17,9 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(push)];
-    self.navigationItem.rightBarButtonItem = barButton;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -28,8 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)push
-{
+- (IBAction)push:(id)sender {
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     
     // preload views to the memory
@@ -39,7 +35,7 @@
     NSArray *fromViews = [NSArray arrayWithObjects:self.imageView1, self.imageView2, self.label1, nil];
     NSArray *toViews = [NSArray arrayWithObjects:secondVC.imageView1, secondVC.imageView2, secondVC.label1, nil];
     
-    [self pushViewController:secondVC fromViews:fromViews toViews:toViews duration:0.3];
+    [self pushViewController:secondVC fromViews:fromViews toViews:toViews duration:0.5];
 }
 
 
