@@ -1,7 +1,7 @@
-BCMagicMoveTransition
+BCMagicTransition
 =====================
 
-![BCMagicMoveTransition](https://github.com/boycechang/BCMagicMoveTransition/blob/master/Magic.gif)
+![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/Magic.gif)
 
 
 ## A MagicMove Style Custom UIViewController Transiton
@@ -10,7 +10,7 @@ BCMagicMoveTransition
 
 
 ---
-If you like BCMagicMoveTransition and use it, could you please:
+If you like BCMagicTransition and use it, could you please:
 
  * star this repo 
 
@@ -18,7 +18,7 @@ If you like BCMagicMoveTransition and use it, could you please:
 
 
 ------------------------------------
-Adding BCMagicMoveTransition to your project
+Adding BCMagicTransition to your project
 ====================================
 
 #### Requirements
@@ -28,15 +28,15 @@ Adding BCMagicMoveTransition to your project
 #### Get it as: 
 ##### 1) source files
 
-1. Download the BCMagicMoveTransition repository as a zip file or clone it
-2. Copy the BCMagicMoveTransition files into your Xcode project
+1. Download the BCMagicTransition repository as a zip file or clone it
+2. Copy the BCMagicTransition files into your Xcode project
 
 ##### 2) via Cocoa pods
 
-BCMagicMoveTransition is available on [CocoaPods](http://cocoapods.org). Just add the following to your project Podfile:
+BCMagicTransition is available on [CocoaPods](http://cocoapods.org). Just add the following to your project Podfile:
 
 ```ruby
-pod 'BCMagicMoveTransition'
+pod 'BCMagicTransition'
 ```
 
 If you want to read more about CocoaPods, have a look at [this short tutorial](http://www.raywenderlich.com/12139/introduction-to-cocoapods).
@@ -45,9 +45,9 @@ If you want to read more about CocoaPods, have a look at [this short tutorial](h
 Basic usage
 ====================================
 ```objective-c
-import "BCMagicTransitViewController.h"
+import "BCMagicTransitionViewController.h"
 
-@interface MyViewController : BCMagicTransitViewController
+@interface MyViewController : BCMagicTransitionViewController
 
 
 - (void)push
