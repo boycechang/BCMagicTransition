@@ -13,7 +13,6 @@ BCMagicTransition
 If you like BCMagicTransition and use it, could you please:
 
  * star this repo 
-
  * send me some feedback. Thanks!
 
 
@@ -64,7 +63,7 @@ import "BCMagicTransitionViewController.h"
 Misc
 =======
 
-Author: [Boyce Chang](http://www.boycechang.com)
+Author: BoyceChang
 
 -------
 #### License
