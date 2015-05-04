@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController">
@@ -36,13 +36,19 @@
                         <action selector="push:" destination="-1" eventType="touchUpInside" id="ph9-4H-Y9c"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="bdp-td-hgg">
-                    <rect key="frame" x="185" y="260" width="102" height="98"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="bdp-td-hgg">
+                    <rect key="frame" x="181" y="258" width="126" height="121"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="SSt-59-J88"/>
+                        <constraint firstAttribute="height" constant="98" id="mFQ-SQ-chl"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="OFA-9G-EGr" secondAttribute="centerX" id="52A-gl-q1A"/>
+                <constraint firstItem="bdp-td-hgg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="211" id="Gon-WR-xS5"/>
+                <constraint firstItem="bdp-td-hgg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="141" id="HsR-l7-OTD"/>
                 <constraint firstAttribute="bottom" secondItem="OFA-9G-EGr" secondAttribute="bottom" constant="28" id="s77-jg-7FG"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
