@@ -52,6 +52,8 @@ import "BCMagicTransitionViewController.h"
 - (void)push
 {
     ... ...
+   //If you use AutoLayout, before using animation, you need to layout views so that it can get the correct frame. It means need to invoke layoutIfNeeded before pushing.
+    [secondVC.view layoutIfNeeded];    
     
     [self pushViewController:secondVC fromViews:fromViews toViews:toViews duration:0.3];
 }
