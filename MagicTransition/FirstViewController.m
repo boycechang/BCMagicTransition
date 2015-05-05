@@ -30,7 +30,6 @@
     
     // preload views to the memory and get thue frames
     [secondVC loadView];
-    [secondVC.view layoutIfNeeded];
     
     // setup fromviews array and toviews array
     NSArray *fromViews = [NSArray arrayWithObjects:self.imageView1, self.imageView2, self.label1, nil];

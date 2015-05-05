@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController">
@@ -14,20 +15,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="zwO-iI-XuA">
-                    <rect key="frame" x="3" y="102" width="213" height="207"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="zwO-iI-XuA">
+                    <rect key="frame" x="194" y="197" width="213" height="207"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="207" id="dO4-3i-IIb"/>
+                        <constraint firstAttribute="width" constant="213" id="qV6-O2-LMC"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Magic Move" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUJ-rx-E6G">
-                    <rect key="frame" x="135" y="81" width="131" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFA-9G-EGr">
-                    <rect key="frame" x="121" y="510" width="78" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFA-9G-EGr">
+                    <rect key="frame" x="278" y="534" width="45" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Push">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,22 +35,39 @@
                         <action selector="push:" destination="-1" eventType="touchUpInside" id="ph9-4H-Y9c"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="bdp-td-hgg">
-                    <rect key="frame" x="181" y="258" width="126" height="121"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="bdp-td-hgg">
+                    <rect key="frame" x="361" y="472" width="102" height="98"/>
                     <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="Egg-55-RHV"/>
                         <constraint firstAttribute="width" constant="102" id="SSt-59-J88"/>
                         <constraint firstAttribute="height" constant="98" id="mFQ-SQ-chl"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="98" id="o4H-TI-uV9"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Magic Move" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUJ-rx-E6G">
+                    <rect key="frame" x="30" y="448" width="131" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="OUJ-rx-E6G" secondAttribute="bottom" constant="131" id="2Br-qS-3h1"/>
                 <constraint firstAttribute="centerX" secondItem="OFA-9G-EGr" secondAttribute="centerX" id="52A-gl-q1A"/>
-                <constraint firstItem="bdp-td-hgg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="211" id="Gon-WR-xS5"/>
-                <constraint firstItem="bdp-td-hgg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="141" id="HsR-l7-OTD"/>
-                <constraint firstAttribute="bottom" secondItem="OFA-9G-EGr" secondAttribute="bottom" constant="28" id="s77-jg-7FG"/>
+                <constraint firstAttribute="centerX" secondItem="zwO-iI-XuA" secondAttribute="centerX" id="Bje-DJ-5og"/>
+                <constraint firstAttribute="bottom" secondItem="bdp-td-hgg" secondAttribute="bottom" constant="30" id="Pnm-cb-gH7"/>
+                <constraint firstAttribute="centerX" secondItem="OFA-9G-EGr" secondAttribute="centerX" id="dag-TS-Q8D"/>
+                <constraint firstItem="OUJ-rx-E6G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="qYm-DQ-Qbl"/>
+                <constraint firstAttribute="bottom" secondItem="OFA-9G-EGr" secondAttribute="bottom" constant="30" id="s77-jg-7FG"/>
+                <constraint firstAttribute="centerY" secondItem="zwO-iI-XuA" secondAttribute="centerY" id="uu2-Di-AkH"/>
+                <constraint firstItem="bdp-td-hgg" firstAttribute="leading" secondItem="OFA-9G-EGr" secondAttribute="trailing" constant="38" id="zmk-0i-OlK"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="dag-TS-Q8D"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="322" y="334"/>
         </view>
     </objects>
