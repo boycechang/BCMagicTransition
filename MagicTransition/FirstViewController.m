@@ -32,7 +32,6 @@
     [secondVC loadView];
     [secondVC.view layoutIfNeeded];
     
-    //[secondVC updateViewConstraints];
     // setup fromviews array and toviews array
     NSArray *fromViews = [NSArray arrayWithObjects:self.imageView1, self.imageView2, self.label1, nil];
     NSArray *toViews = [NSArray arrayWithObjects:secondVC.imageView1, secondVC.imageView2, secondVC.label1, nil];
