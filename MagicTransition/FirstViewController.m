@@ -30,7 +30,6 @@
     
     // preload views to the memory and get thue frames
     [secondVC loadView];
-    [secondVC.view layoutIfNeeded];
     
     //[secondVC updateViewConstraints];
     // setup fromviews array and toviews array

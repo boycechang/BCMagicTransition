@@ -23,7 +23,7 @@
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
+    [toViewController.view layoutIfNeeded];
     UIView *containerView = [transitionContext containerView];
     
     if (self.isMagic) {

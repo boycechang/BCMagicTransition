@@ -130,8 +130,8 @@
 }
 
 - (void)handleEdgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer*)recognizer {
-    CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width * 1.0);
-    progress = MIN(1.0, MAX(0.0, progress));
+    CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width * 0.99);
+    progress = MIN(0.99, MAX(0.0, progress));
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
@@ -143,7 +143,7 @@
         
     } else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         // Finish or cancel the interactive transition
-        if (progress > 0.5) {
+        if (progress > 0.4) {
             [self.interactivePopTransition finishInteractiveTransition];
         } else {
             [self.interactivePopTransition cancelInteractiveTransition];
