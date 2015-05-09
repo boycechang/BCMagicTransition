@@ -149,7 +149,7 @@
             [self.interactivePopTransition cancelInteractiveTransition];
         }
         
-        self.interactivePopTransition = nil;
+        //self.interactivePopTransition = nil;
     }
 }
 
