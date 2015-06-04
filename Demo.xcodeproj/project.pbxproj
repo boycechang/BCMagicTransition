@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E138B7E91AD50C4000843CCA /* BCMagicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E138B7E61AD50C4000843CCA /* BCMagicTransition.m */; };
-		E138B7EA1AD50C4000843CCA /* BCMagicTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138B7E81AD50C4000843CCA /* BCMagicTransitionViewController.m */; };
 		E138B7EE1AD5140300843CCA /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E138B7EC1AD5140300843CCA /* ThirdViewController.m */; };
 		E138B7EF1AD5140300843CCA /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138B7ED1AD5140300843CCA /* ThirdViewController.xib */; };
 		E17EDCE31A03C5890097DD5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDCE21A03C5890097DD5C /* main.m */; };
@@ -20,13 +19,12 @@
 		E17EDD181A03C6220097DD5C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EDD161A03C6220097DD5C /* SecondViewController.m */; };
 		E17EDD191A03C6220097DD5C /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17EDD171A03C6220097DD5C /* SecondViewController.xib */; };
 		E17EDD1B1A03C6C80097DD5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17EDD1A1A03C6C80097DD5C /* UIKit.framework */; };
+		F05986AD1B203D36004C2C06 /* UIViewController+BCMagicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F05986AC1B203D36004C2C06 /* UIViewController+BCMagicTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E138B7E51AD50C4000843CCA /* BCMagicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCMagicTransition.h; path = BCMagicTransition/BCMagicTransition.h; sourceTree = "<group>"; };
 		E138B7E61AD50C4000843CCA /* BCMagicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCMagicTransition.m; path = BCMagicTransition/BCMagicTransition.m; sourceTree = "<group>"; };
-		E138B7E71AD50C4000843CCA /* BCMagicTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCMagicTransitionViewController.h; path = BCMagicTransition/BCMagicTransitionViewController.h; sourceTree = "<group>"; };
-		E138B7E81AD50C4000843CCA /* BCMagicTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCMagicTransitionViewController.m; path = BCMagicTransition/BCMagicTransitionViewController.m; sourceTree = "<group>"; };
 		E138B7EB1AD5140300843CCA /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		E138B7EC1AD5140300843CCA /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		E138B7ED1AD5140300843CCA /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
@@ -44,6 +42,8 @@
 		E17EDD161A03C6220097DD5C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E17EDD171A03C6220097DD5C /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		E17EDD1A1A03C6C80097DD5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F05986AB1B203D36004C2C06 /* UIViewController+BCMagicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+BCMagicTransition.h"; path = "BCMagicTransition/UIViewController+BCMagicTransition.h"; sourceTree = "<group>"; };
+		F05986AC1B203D36004C2C06 /* UIViewController+BCMagicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+BCMagicTransition.m"; path = "BCMagicTransition/UIViewController+BCMagicTransition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 			children = (
 				E138B7E51AD50C4000843CCA /* BCMagicTransition.h */,
 				E138B7E61AD50C4000843CCA /* BCMagicTransition.m */,
-				E138B7E71AD50C4000843CCA /* BCMagicTransitionViewController.h */,
-				E138B7E81AD50C4000843CCA /* BCMagicTransitionViewController.m */,
+				F05986AB1B203D36004C2C06 /* UIViewController+BCMagicTransition.h */,
+				F05986AC1B203D36004C2C06 /* UIViewController+BCMagicTransition.m */,
 			);
 			name = BSMagicTransition;
 			sourceTree = "<group>";
@@ -214,9 +214,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05986AD1B203D36004C2C06 /* UIViewController+BCMagicTransition.m in Sources */,
 				E17EDD131A03C6110097DD5C /* FirstViewController.m in Sources */,
 				E17EDD181A03C6220097DD5C /* SecondViewController.m in Sources */,
-				E138B7EA1AD50C4000843CCA /* BCMagicTransitionViewController.m in Sources */,
 				E17EDCE61A03C5890097DD5C /* AppDelegate.m in Sources */,
 				E17EDCE31A03C5890097DD5C /* main.m in Sources */,
 				E138B7E91AD50C4000843CCA /* BCMagicTransition.m in Sources */,
