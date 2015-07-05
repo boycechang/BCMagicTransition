@@ -28,7 +28,7 @@
 - (IBAction)push:(id)sender {
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     
-    // preload views to the memory and get thue frames
+    // preload views to the memory
     [secondVC view];
     
     // setup fromviews array and toviews array

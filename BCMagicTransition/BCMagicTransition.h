@@ -2,8 +2,8 @@
 //  BCMagicTransition.h
 //  BCMagicTransition
 //
-//  Created by Xaiobo Zhang on 10/21/14.
-//  Copyright (c) 2014 Xaiobo Zhang. All rights reserved.
+//  Created by Boyce Chang on 10/21/14.
+//  Copyright (c) 2014 Boyce Chang. All rights reserved.
 //
 
 

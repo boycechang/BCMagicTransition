@@ -2,13 +2,18 @@
 //  UIViewController+BCMagicTransition.h
 //  Demo
 //
-//  Created by Nikhil Nigade on 6/4/15.
-//  Copyright (c) 2015 Boyce. All rights reserved.
+//  Created by Boyce Chang on 6/4/15.
+//  Copyright (c) 2015 Boyce Chang. All rights reserved.
 //
 
-#import "BCMagicTransition.h"
 
 // Conform to this protocol on a viewController which utilizes BCMagicTransition. ViewControllers which don't will not be affected.
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class BCMagicTransition;
+
 @protocol BCMagicTransitionProtocol <NSObject>
 
 @end

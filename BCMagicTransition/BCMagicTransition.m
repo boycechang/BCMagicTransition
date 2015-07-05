@@ -34,9 +34,19 @@
 }
 
 #pragma mark - private
+- (UIImage *)getImageFromView:(UIView *)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 - (void)defaultAnimationFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController containerView:(UIView *)containerView duration:(NSTimeInterval)duration transitionContext:(id <UIViewControllerContextTransitioning>)transitionContext {
-    float deviation = (self.isPush)?1.0f:-1.0f;
+    float deviation = (self.isPush) ? 1.0f : -1.0f;
     
     CGRect newFrame = toViewController.view.frame;
     newFrame.origin.x += newFrame.size.width*deviation;
@@ -67,44 +77,52 @@
     
     NSMutableArray *fromViewSnapshotArray = [[NSMutableArray alloc] init];
     for (UIView *fromView in self.fromViews) {
-        UIView *fromViewSnapshot = [fromView snapshotViewAfterScreenUpdates:NO];
+        UIImageView *fromViewSnapshot = [[UIImageView alloc] initWithImage:[self getImageFromView:fromView]];
         fromViewSnapshot.frame = [containerView convertRect:fromView.frame fromView:fromView.superview];
-        fromView.hidden = YES;
         [fromViewSnapshotArray addObject:fromViewSnapshot];
+        fromView.alpha = 0.0;
     }
     
     toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
     toViewController.view.alpha = 0;
-    
-    for (UIView *toView in self.toViews) {
-        toView.hidden = YES;
-    }
-    
     [containerView addSubview:toViewController.view];
     
-    for (NSUInteger i = [fromViewSnapshotArray count]; i > 0; i--) {
-        [containerView addSubview:[fromViewSnapshotArray objectAtIndex:i-1]];
+    for (UIView *toView in self.toViews) {
+        toView.alpha = 0.0;
     }
     
-    [UIView animateWithDuration:duration delay:0.0 usingSpringWithDamping:0.7 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        toViewController.view.alpha = 1.0;
-        for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
-            UIView *toView = [self.toViews objectAtIndex:i];
-            UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
-            CGRect frame = [containerView convertRect:toView.frame fromView:toView.superview];
-            fromViewSnapshot.frame = frame;
-        }
-    } completion:^(BOOL finished) {
-        for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
-            UIView *toView = [self.toViews objectAtIndex:i];
-            UIView *fromView = [self.fromViews objectAtIndex:i];
-            UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
-            toView.hidden = NO;
-            fromView.hidden = NO;
-            [fromViewSnapshot removeFromSuperview];
-        }
-        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-    }];
+    for (NSUInteger i = [fromViewSnapshotArray count]; i > 0; i--) {
+        [containerView addSubview:[fromViewSnapshotArray objectAtIndex:i - 1]];
+    }
+    
+    [UIView animateWithDuration:duration
+                          delay:0.0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         toViewController.view.alpha = 1.0;
+                         for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
+                             UIView *toView = [self.toViews objectAtIndex:i];
+                             UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
+                             CGRect frame = [containerView convertRect:toView.frame fromView:toView.superview];
+                             fromViewSnapshot.frame = frame;
+                         }
+                     } completion:^(BOOL finished) {
+                         for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
+                             UIView *toView = [self.toViews objectAtIndex:i];
+                             UIView *fromView = [self.fromViews objectAtIndex:i];
+                             UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
+                             toView.alpha = 1.0;
+                             fromView.alpha = 1.0;
+                             [fromViewSnapshot removeFromSuperview];
+                         }
+                         
+                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0.1), ^{
+                             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                         });
+                         //[transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                     }];
 }
 
 @end

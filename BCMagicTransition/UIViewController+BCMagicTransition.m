@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 Boyce. All rights reserved.
 //
 
-#import "UIViewController+BCMagicTransition.h"
 #import <objc/runtime.h>
+
+#import "UIViewController+BCMagicTransition.h"
+
+#import "BCMagicTransition.h"
+
+#import "BCInteractiveTransition.h"
 
 static char kPopTransit;
 static char kPushTransit;
@@ -22,14 +27,12 @@ static char kInteractivePopTransition;
 
 #pragma mark - Swizzled Methods
 
-- (void)dz_viewDidAppear:(BOOL)animated
-{
+- (void)dz_viewDidAppear:(BOOL)animated {
     
     [self dz_viewDidAppear:animated];
-    NSLog(@"%@ dz_viewDidAppear:", NSStringFromClass([self class]));
+    
     // Set outself as the navigation controller's delegate so we're asked for a transitioning object
-    if (self.popTransit)
-    {
+    if (self.popTransit) {
         self.navigationController.delegate = self;
     }
     
@@ -38,18 +41,17 @@ static char kInteractivePopTransition;
 - (void)dz_viewWillDisappear:(BOOL)animated {
     
     [self dz_viewWillDisappear:animated];
-    NSLog(@"%@ dz_viewWillDisappear:", NSStringFromClass([self class]));
+    
     // Stop being the navigation controller's delegate
-    if (self.navigationController.delegate == self)
-    {
+    if (self.navigationController.delegate == self) {
         self.navigationController.delegate = nil;
     }
 }
 
 
 #pragma mark - Class Methods
-+ (void)load
-{
++ (void)load {
+    [super load];
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -71,40 +73,31 @@ static char kInteractivePopTransition;
         }
         
     });
-    
 }
 
 #pragma mark - Properties
 
-- (UIPercentDrivenInteractiveTransition *)interactivePopTransition
-{
+- (UIPercentDrivenInteractiveTransition *)interactivePopTransition {
     return objc_getAssociatedObject(self, &kInteractivePopTransition);
 }
 
-- (void)setInteractivePopTransition:(UIPercentDrivenInteractiveTransition *)value
-{
+- (void)setInteractivePopTransition:(UIPercentDrivenInteractiveTransition *)value {
     objc_setAssociatedObject(self, &kInteractivePopTransition, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BCMagicTransition *)popTransit
-{
+- (BCMagicTransition *)popTransit {
     return objc_getAssociatedObject(self, &kPopTransit);
 }
 
-- (void)setPopTransit:(BCMagicTransition *)value
-{
-    
+- (void)setPopTransit:(BCMagicTransition *)value {
     objc_setAssociatedObject(self, &kPopTransit, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
 }
 
-- (BCMagicTransition *)pushTransit
-{
+- (BCMagicTransition *)pushTransit {
     return objc_getAssociatedObject(self, &kPushTransit);
 }
 
-- (void)setPushTransit:(BCMagicTransition *)value
-{
+- (void)setPushTransit:(BCMagicTransition *)value {
     objc_setAssociatedObject(self, &kPushTransit, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -116,9 +109,7 @@ static char kInteractivePopTransition;
                     toView:(UIView *)toView
                   duration:(NSTimeInterval)duration
 {
-    NSArray *fromViews = [NSArray arrayWithObject:fromView];
-    NSArray *toViews = [NSArray arrayWithObject:toView];
-    [self pushViewController:viewController fromViews:fromViews toViews:toViews duration:duration];
+    [self pushViewController:viewController fromViews:@[fromView] toViews:@[toView] duration:duration];
 }
 
 - (void)pushViewController:(UIViewController *)viewController
@@ -126,6 +117,7 @@ static char kInteractivePopTransition;
                    toViews:(NSArray *)toViews
                   duration:(NSTimeInterval)duration
 {
+    // Add push animation to self
     BCMagicTransition *magicPush = [BCMagicTransition new];
     magicPush.isMagic = YES;
     magicPush.isPush = YES;
@@ -136,11 +128,9 @@ static char kInteractivePopTransition;
     self.navigationController.delegate = self;
     
     // Add pop gesture and animation to viewcontroller
-    UIViewController *transitVC = viewController;
-    
-    UIScreenEdgePanGestureRecognizer *popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleEdgePanGestureRecognizer:)];
-    popRecognizer.edges = UIRectEdgeLeft;
-    [transitVC.view addGestureRecognizer:popRecognizer];
+    BCInteractiveTransition *interactiveTransition = [BCInteractiveTransition transitionWithType:BCInteractiveTransitionTypeEdgePan];
+    [interactiveTransition addToViewController:viewController];
+    viewController.interactivePopTransition = interactiveTransition;
     
     BCMagicTransition *magicPop = [BCMagicTransition new];
     magicPop.isMagic = YES;
@@ -148,20 +138,18 @@ static char kInteractivePopTransition;
     magicPop.duration = duration;
     magicPop.fromViews = toViews;
     magicPop.toViews = fromViews;
-    transitVC.popTransit = magicPop;
+    viewController.popTransit = magicPop;
     
-    [self.navigationController pushViewController:transitVC animated:YES];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - <UINavigationControllerDelegate>
 
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
-    if ([viewController conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")])
-    {
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if ([viewController conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")]) {
         [(UIViewController *)viewController setPushTransit:nil];
     }
-    
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
@@ -171,41 +159,27 @@ static char kInteractivePopTransition;
 {
     switch (operation) {
         case UINavigationControllerOperationPush:
-        {
-            
-            if ([fromVC conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")] && [fromVC pushTransit])
-            {
+            if ([fromVC conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")] && [fromVC pushTransit]) {
                 return [fromVC pushTransit];
-            }
-            else
-            {
+            } else {
                 BCMagicTransition *normalPush = [BCMagicTransition new];
                 normalPush.isMagic = NO;
                 normalPush.isPush = YES;
                 normalPush.duration = DEFAULT_TRANSITON_DURATION;
                 return normalPush;
             }
-            
-        }
             break;
             
         case UINavigationControllerOperationPop:
-        {
-            
-            if ([fromVC conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")] && [fromVC popTransit])
-            {
+            if ([fromVC conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")] && [fromVC popTransit]) {
                 return [fromVC popTransit];
-            }
-            else
-            {
+            } else {
                 BCMagicTransition *normalPop = [BCMagicTransition new];
                 normalPop.isMagic = NO;
                 normalPop.isPush = NO;
                 normalPop.duration = DEFAULT_TRANSITON_DURATION;
                 return normalPop;
             }
-            
-        }
             break;
         default:
             return nil;
@@ -216,47 +190,13 @@ static char kInteractivePopTransition;
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                          interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
 {
-    
-    if ([navigationController.topViewController conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")])
-    {
-        UIViewController *viewController = navigationController.topViewController;
-        return viewController.interactivePopTransition;
+    BCMagicTransition *magicTransition = animationController;
+    if ([self conformsToProtocol:NSProtocolFromString(@"BCMagicTransitionProtocol")] && !magicTransition.isPush) {
+        BCInteractiveTransition *interactiveTransition = (BCInteractiveTransition *)self.interactivePopTransition;
+        return interactiveTransition.interacting ? interactiveTransition : nil;
     }
     
     return nil;
-    
 }
-
-- (void)handleEdgePanGestureRecognizer:(UIScreenEdgePanGestureRecognizer*)recognizer
-{
-    
-    CGFloat progress = [recognizer translationInView:self.view].x / (self.view.bounds.size.width * 0.99);
-    progress = MIN(0.99, MAX(0.0, progress));
-    
-    if (recognizer.state == UIGestureRecognizerStateBegan)
-    {
-        self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    }
-    else if (recognizer.state == UIGestureRecognizerStateChanged)
-    {
-        
-        [self.interactivePopTransition updateInteractiveTransition:progress];
-        
-    }
-    else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled)
-    {
-        // Finish or cancel the interactive transition
-        if (progress > 0.4) {
-            [self.interactivePopTransition finishInteractiveTransition];
-        } else {
-            [self.interactivePopTransition cancelInteractiveTransition];
-        }
-        
-        //self.interactivePopTransition = nil;
-    }
-    
-}
-
+     
 @end
