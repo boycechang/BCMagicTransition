@@ -129,7 +129,7 @@ static char kInteractivePopTransition;
     
     // Add pop gesture and animation to viewcontroller
     BCInteractiveTransition *interactiveTransition = [BCInteractiveTransition transitionWithType:BCInteractiveTransitionTypeEdgePan];
-    [interactiveTransition addToViewController:viewController];
+    [interactiveTransition attachToViewController:viewController];
     viewController.interactivePopTransition = interactiveTransition;
     
     BCMagicTransition *magicPop = [BCMagicTransition new];

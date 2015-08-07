@@ -42,7 +42,7 @@
     return transition;
 }
 
-- (void)addToViewController:(UIViewController *)viewController {
+- (void)attachToViewController:(UIViewController *)viewController {
     _presentingVC = viewController;
     [viewController.view addGestureRecognizer:self.gesture];
 }

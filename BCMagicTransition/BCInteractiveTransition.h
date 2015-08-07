@@ -23,6 +23,6 @@ typedef NS_ENUM(NSInteger, BCInteractiveTransitionType) {
 
 @property (nonatomic, assign) BOOL interacting;
 
-- (void)addToViewController:(UIViewController*)viewController;
+- (void)attachToViewController:(UIViewController*)viewController;
 
 @end

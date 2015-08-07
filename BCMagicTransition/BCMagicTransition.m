@@ -21,15 +21,15 @@
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    [toViewController.view layoutIfNeeded];
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    [toVC.view layoutIfNeeded];
     UIView *containerView = [transitionContext containerView];
     
     if (self.isMagic) {
-        [self magicAnimationFromViewController:fromViewController toViewController:toViewController containerView:containerView duration:self.duration transitionContext:transitionContext];
+        [self magicAnimationFromViewController:fromVC toViewController:toVC containerView:containerView duration:self.duration transitionContext:transitionContext];
     } else {
-        [self defaultAnimationFromViewController:fromViewController toViewController:toViewController containerView:containerView duration:self.duration transitionContext:transitionContext];
+        [self defaultAnimationFromViewController:fromVC toViewController:toVC containerView:containerView duration:self.duration transitionContext:transitionContext];
     }
 }
 
@@ -55,7 +55,6 @@
     [containerView addSubview:fromViewController.view];
     
     [UIView animateWithDuration:duration animations:^{
-        
         CGRect animationFrame = toViewController.view.frame;
         animationFrame.origin.x -= animationFrame.size.width*deviation;
         toViewController.view.frame = animationFrame;
@@ -63,7 +62,6 @@
         animationFrame = fromViewController.view.frame;
         animationFrame.origin.x -= animationFrame.size.width*deviation;
         fromViewController.view.frame = animationFrame;
-        
     } completion:^(BOOL finished) {
         [fromViewController.view removeFromSuperview];
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
@@ -118,10 +116,7 @@
                              [fromViewSnapshot removeFromSuperview];
                          }
                          
-                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0.1), ^{
-                             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-                         });
-                         //[transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
                      }];
 }
 
