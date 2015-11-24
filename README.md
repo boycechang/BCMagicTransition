@@ -6,7 +6,7 @@ BCMagicTransition
 
 ## A MagicMove Style Custom UIViewController Transiton
 
-### Version 1.0.3
+### Version 1.0.5
 
 
 ---
