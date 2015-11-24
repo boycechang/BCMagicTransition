@@ -51,7 +51,7 @@
 #pragma mark - private method
 
 - (void)handleGestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer {
-    CGFloat progress;
+    CGFloat progress = 0.0;
     
     switch (self.type) {
         case BCInteractiveTransitionTypeEdgePan:
