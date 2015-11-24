@@ -23,8 +23,10 @@
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    [toVC.view layoutIfNeeded];
     UIView *containerView = [transitionContext containerView];
+    
+    toVC.view.frame = fromVC.view.frame;
+    [toVC.view layoutIfNeeded];
     
     if (self.isMagic) {
         [self magicAnimationFromViewController:fromVC toViewController:toVC containerView:containerView duration:self.duration transitionContext:transitionContext];
@@ -37,9 +39,7 @@
 - (UIImage *)getImageFromView:(UIView *)view {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
     return image;
 }
