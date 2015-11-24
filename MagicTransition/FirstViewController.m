@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"First VC";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -31,11 +32,10 @@
     // preload views to the memory
     [secondVC view];
     
-    // setup fromviews array and toviews array
-    NSArray *fromViews = [NSArray arrayWithObjects:self.imageView1, self.imageView2, self.label1, nil];
-    NSArray *toViews = [NSArray arrayWithObjects:secondVC.imageView1, secondVC.imageView2, secondVC.label1, nil];
-    
-    [self pushViewController:secondVC fromViews:fromViews toViews:toViews duration:0.5];
+    [self pushViewController:secondVC
+                   fromViews:@[self.imageView1, self.imageView2, self.label1]
+                     toViews:@[secondVC.imageView1, secondVC.imageView2, secondVC.label1]
+                    duration:0.5];
 }
 
 

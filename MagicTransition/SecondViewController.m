@@ -10,14 +10,14 @@
 #import "ThirdViewController.h"
 
 @interface SecondViewController ()
-
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *percentDrivenTransition;
 @end
 
 @implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"Second VC";
 }
 
 - (void)didReceiveMemoryWarning {

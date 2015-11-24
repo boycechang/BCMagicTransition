@@ -17,16 +17,13 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.3f;
+    return self.duration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
-    
-    toVC.view.frame = fromVC.view.frame;
-    [toVC.view layoutIfNeeded];
     
     if (self.isMagic) {
         [self magicAnimationFromViewController:fromVC toViewController:toVC containerView:containerView duration:self.duration transitionContext:transitionContext];
@@ -35,7 +32,9 @@
     }
 }
 
+
 #pragma mark - private
+
 - (UIImage *)getImageFromView:(UIView *)view {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -78,25 +77,26 @@
         UIImageView *fromViewSnapshot = [[UIImageView alloc] initWithImage:[self getImageFromView:fromView]];
         fromViewSnapshot.frame = [containerView convertRect:fromView.frame fromView:fromView.superview];
         [fromViewSnapshotArray addObject:fromViewSnapshot];
-        fromView.alpha = 0.0;
+        fromView.hidden = YES;
+    }
+    
+    for (UIView *toView in self.toViews) {
+        toView.hidden = YES;
     }
     
     toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
     toViewController.view.alpha = 0;
     [containerView addSubview:toViewController.view];
     
-    for (UIView *toView in self.toViews) {
-        toView.alpha = 0.0;
-    }
-    
     for (NSUInteger i = [fromViewSnapshotArray count]; i > 0; i--) {
         [containerView addSubview:[fromViewSnapshotArray objectAtIndex:i - 1]];
     }
     
+    [containerView layoutIfNeeded];
     [UIView animateWithDuration:duration
                           delay:0.0
-         usingSpringWithDamping:0.6
-          initialSpringVelocity:0.0
+         usingSpringWithDamping:0.8
+          initialSpringVelocity:1.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          toViewController.view.alpha = 1.0;
@@ -110,13 +110,14 @@
                          for (NSUInteger i = 0; i < [self.fromViews count]; i++) {
                              UIView *toView = [self.toViews objectAtIndex:i];
                              UIView *fromView = [self.fromViews objectAtIndex:i];
+                             toView.hidden = NO;
+                             fromView.hidden = NO;
+                             
                              UIView *fromViewSnapshot = [fromViewSnapshotArray objectAtIndex:i];
-                             toView.alpha = 1.0;
-                             fromView.alpha = 1.0;
                              [fromViewSnapshot removeFromSuperview];
                          }
                          
-                         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                      }];
 }
 
