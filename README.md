@@ -44,9 +44,9 @@ If you want to read more about CocoaPods, have a look at [this short tutorial](h
 Basic usage
 ====================================
 ```objective-c
-import "BCMagicTransitionViewController.h"
+#import "UIViewController+BCMagicTransition.h"
 
-@interface MyViewController : BCMagicTransitionViewController
+@interface MyViewController : <BCMagicTransitionProtocol>
 
 
 - (void)push
