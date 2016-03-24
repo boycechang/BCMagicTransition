@@ -1,24 +1,18 @@
+![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/icon.png)
+
 BCMagicTransition
 =====================
 
 ![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/MagicTransition.gif)
 
 
-## A MagicMove Style Custom UIViewController Transiton
+**A MagicMove Style Custom UIViewController Transiton**
 
-### Version 1.0.5
-
-
----
-If you like BCMagicTransition and use it, could you please:
-
- * star this repo 
- * send me some feedback. Thanks!
+**Version 1.0.5**
 
 
-------------------------------------
-Adding BCMagicTransition to your project
-====================================
+
+##Adding BCMagicTransition to your project
 
 #### Requirements
 
@@ -41,8 +35,7 @@ pod 'BCMagicTransition'
 If you want to read more about CocoaPods, have a look at [this short tutorial](http://www.raywenderlich.com/12139/introduction-to-cocoapods).
 
 
-Basic usage
-====================================
+##Basic usage
 ```objective-c
 #import "UIViewController+BCMagicTransition.h"
 
@@ -58,18 +51,19 @@ Basic usage
 
 ```
 
--------
 
-Misc
-=======
+##Misc
 
 Author: BoyceChang
 
--------
+If you like BCMagicTransition and use it, could you please:
+
+ * star this repo 
+ * send me some feedback. Thanks!
+
 #### License
 This code is distributed under the terms and conditions of the MIT license. 
 
--------
 #### Contribution guidelines
 
 If you are fixing a bug you discovered, please add also a unit test so I know how exactly to reproduce the bug before merging.
