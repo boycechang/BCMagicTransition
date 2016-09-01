@@ -16,6 +16,19 @@
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        _delay    = DEFAULT_TRANSITON_DELAY;
+        _duration = DEFAULT_TRANSITON_DURATION;
+        _damping  = DEFAULT_TRANSITON_DAMPING;
+        _velocity = DEFAULT_TRANSITON_VELOCITY;
+    }
+    
+    return self;
+}
+
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
     return self.duration;
 }
@@ -94,9 +107,9 @@
     
     [containerView layoutIfNeeded];
     [UIView animateWithDuration:duration
-                          delay:0.0
-         usingSpringWithDamping:0.8
-          initialSpringVelocity:1.0
+                          delay:_delay
+         usingSpringWithDamping:_damping
+          initialSpringVelocity:_velocity
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          toViewController.view.alpha = 1.0;

@@ -15,7 +15,6 @@ static char kPopTransit;
 static char kPushTransit;
 static char kInteractivePopTransition;
 
-#define DEFAULT_TRANSITON_DURATION 0.3
 @implementation UIViewController (BCMagicTransition)
 
 @dynamic popTransit;
@@ -160,9 +159,12 @@ static char kInteractivePopTransition;
                 return fromVC.pushTransit;
             } else {
                 BCMagicTransition *normalPush = [BCMagicTransition new];
-                normalPush.isMagic = NO;
-                normalPush.isPush = YES;
+                normalPush.isMagic  = NO;
+                normalPush.isPush   = YES;
                 normalPush.duration = DEFAULT_TRANSITON_DURATION;
+                normalPush.delay    = DEFAULT_TRANSITON_DELAY;
+                normalPush.damping  = DEFAULT_TRANSITON_DAMPING;
+                normalPush.velocity = DEFAULT_TRANSITON_VELOCITY;
                 return normalPush;
             }
             break;
@@ -172,9 +174,12 @@ static char kInteractivePopTransition;
                 return fromVC.popTransit;
             } else {
                 BCMagicTransition *normalPop = [BCMagicTransition new];
-                normalPop.isMagic = NO;
-                normalPop.isPush = NO;
+                normalPop.isMagic  = NO;
+                normalPop.isPush   = NO;
                 normalPop.duration = DEFAULT_TRANSITON_DURATION;
+                normalPop.delay    = DEFAULT_TRANSITON_DELAY;
+                normalPop.damping  = DEFAULT_TRANSITON_DAMPING;
+                normalPop.velocity = DEFAULT_TRANSITON_VELOCITY;
                 return normalPop;
             }
             break;
