@@ -1,6 +1,6 @@
 ![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/icon.png)
 
-BCMagicTransition
+BCMagicTransition  [![Build Status](https://travis-ci.org/boycechang/BCMagicTransition.svg?branch=master)](https://travis-ci.org/boycechang/BCMagicTransition)
 =====================
 
 ![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/MagicTransition.gif)
