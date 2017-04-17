@@ -1,6 +1,6 @@
 ![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/icon.png)
 
-BCMagicTransition  [![Build Status](https://travis-ci.org/boycechang/BCMagicTransition.svg?branch=master)](https://travis-ci.org/boycechang/BCMagicTransition)
+BCMagicTransition  [![Build Status](https://travis-ci.org/boycechang/BCMagicTransition.svg?branch=master)](https://travis-ci.org/boycechang/BCMagicTransition) ![Verison](https://cocoapod-badges.herokuapp.com/v/BCMagicTransition/badge.png) ![Lisence](https://cocoapod-badges.herokuapp.com/l/BCMagicTransition/badge.(png|svg)) ![platform](https://cocoapod-badges.herokuapp.com/p/BCMagicTransition/badge.png)
 =====================
 
 ![BCMagicTransition](https://github.com/boycechang/BCMagicTransition/blob/master/MagicTransition.gif)
